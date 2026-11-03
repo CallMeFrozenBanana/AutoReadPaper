@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "autoreadpaper"
+version = "0.1.0"
+description = "Local topic-driven research reading library"
+requires-python = ">=3.11"
+dependencies = ["fastapi>=0.115,<1", "uvicorn>=0.30,<1", "httpx>=0.27,<1", "pydantic>=2.9,<3", "python-multipart>=0.0.18", "pymupdf>=1.24,<2", "jieba>=0.42,<1"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10"]
+
+[project.scripts]
+autoreadpaper = "autoreadpaper.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["autoreadpaper*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

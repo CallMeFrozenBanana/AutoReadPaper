@@ -1,0 +1,1 @@
+"""AutoReadPaper local application."""
